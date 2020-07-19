@@ -1,0 +1,2 @@
+同一个线程里，多个threadLocal变量保存在同一个map里，不同线程拥有各自的map
+每个Thread中都具备一个ThreadLocalMap，而ThreadLocalMap可以存储以ThreadLocal为key ，Object 对象为 value的键值对。
