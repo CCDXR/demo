@@ -20,7 +20,8 @@ public class ThreadExecutor implements Runnable {
 
     public static void main(String[] args) {
         SemaphoreService semaphoreService = new SemaphoreService();
-        List<ThreadExecutor> threadExecutor = Stream.generate(() -> new ThreadExecutor(semaphoreService)).limit(10).collect(Collectors.toList());
+        List<ThreadExecutor> threadExecutor = Stream.generate(() ->
+                new ThreadExecutor(semaphoreService)).limit(10).collect(Collectors.toList());
         threadExecutor.forEach(a -> new Thread(a).start());
 
         CountDownLatch count = new CountDownLatch(1);
